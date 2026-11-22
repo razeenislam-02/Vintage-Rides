@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Compare Cars | Vintage Rides</title>
+ <link rel="stylesheet" href="style.css">
+ <script src="app.js" defer></script>
+ 
+</head>
+<body data-page="compare">
+ <header class="site-header">
+  <a class="brand" href="index.html">Vintage Rides</a>
+  <button class="menu-button" id="menu-button" type="button">Menu</button>
+  <nav id="main-nav">
+   <a href="index.html">Home</a>
+   <a href="cars.html">Collection</a>
+   <a href="compare.html">Compare</a>
+   <a href="about.html">About</a>
+   <a href="contact.html">Contact</a>
+   <a href="login.html">Login / Register</a>
+   <a href="cart.html">Cart</a>
+  </nav>
+ </header>
+ <main class="container">
+
+  <h1>Compare Cars</h1>
+  <p>Select two cars to compare their specifications.</p>
+  <form id="compare-form" class="form-grid">
+   <label>First car<select id="compare-one" required></select></label>
+   <label>Second car<select id="compare-two" required></select></label>
+   <button class="button" type="submit">Compare</button>
+  </form>
+  <div id="comparison" class="table-wrap"></div>
+  <p id="compare-feedback" class="message" role="status"></p>
+  <section class="simple-panel">
+   <h2>Comparison list</h2>
+   <p class="muted">Comparison list goes here.....</p>
+   <button class="button" id="save-comparison" type="button">Save Comparison</button>
+   <button class="button secondary" id="remove-comparison" type="button">Remove Saved Comparison</button>
+   <p id="saved-comparison" class="message" role="status">No saved comparison.</p>
+  </section>
+
+ </main>
+ <footer class="site-footer">Vintage Rides</footer>
+</body>
+</html>
