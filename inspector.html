@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Inspector Dashboard | Vintage Rides</title>
+ <link rel="stylesheet" href="style.css">
+ <script src="app.js" defer></script>
+ <script src="inspector.js" defer></script>
+</head>
+<body data-page="inspector">
+ <header class="site-header">
+  <a class="brand" href="index.html">Vintage Rides</a>
+  <button class="menu-button" id="menu-button" type="button">Menu</button>
+  <nav id="main-nav">
+   <a href="index.html">Home</a>
+   <a href="cars.html">Collection</a>
+   <a href="compare.html">Compare</a>
+   <a href="about.html">About</a>
+   <a href="contact.html">Contact</a>
+   <a href="login.html">Login / Register</a>
+   <a href="cart.html">Cart</a>
+  </nav>
+ </header>
+ <main class="container">
+
+  <h1>Inspector Dashboard</h1>
+  <p>Review assigned vehicles, complete the checklist and submit inspection reports.</p>
+  <section class="simple-panel">
+   <h2>Assigned inspection queue</h2>
+   <div class="table-wrap"><table><thead><tr><th>Vehicle</th><th>Seller</th><th>Due</th><th>Status</th></tr></thead><tbody id="inspection-queue">
+    <tr><td>1965 Ford Mustang</td><td> Seller</td><td>Pending</td><td>Assigned</td></tr>
+    <tr><td>1957 Chevrolet Bel Air</td><td> Seller</td><td>Pending</td><td>In progress</td></tr>
+   </tbody></table></div>
+  </section>
+  <section class="simple-panel">
+   <h2>Inspection checklist and report</h2>
+   <form id="inspection-form" class="form-grid">
+    <label>Vehicle<select name="vehicle" required><option value="">Select assigned vehicle</option><option>1965 Ford Mustang</option><option>1957 Chevrolet Bel Air</option></select></label>
+    <label>Authenticity<select name="authenticity" required><option value="">Select result</option><option>Verified</option><option>Not verified</option><option>Needs further review</option></select></label>
+    <label>Engine condition<select name="engine" required><option value="">Select condition</option><option>Excellent</option><option>Good</option><option>Fair</option><option>Poor</option></select></label>
+    <label>Mileage verification<select name="mileage" required><option value="">Select result</option><option>Verified</option><option>Not verified</option></select></label>
+    <label>Chassis identification<select name="chassis" required><option value="">Select result</option><option>Verified</option><option>Not verified</option></select></label>
+    <label>Overall rating<input name="rating" type="number" min="1" max="10" required></label>
+    <label>Findings<textarea name="findings" required minlength="30"></textarea></label>
+    <button class="button" type="submit">Submit Inspection Report</button>
+   </form>
+   <p id="inspection-message" class="message" role="status"></p>
+  </section>
+  <section class="simple-panel">
+   <h2>Report history</h2>
+   <ul id="inspection-history"><li> report: 1965 Ford Mustang — Draft <button class="text-button delete-report" type="button">Delete draft</button></li></ul>
+   <button class="button secondary" id="edit-latest-report" type="button">Edit latest draft</button>
+  </section>
+
+ </main>
+ <footer class="site-footer">Vintage Rides</footer>
+</body>
+</html>
