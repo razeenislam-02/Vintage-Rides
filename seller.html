@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Seller Dashboard | Vintage Rides</title>
+ <link rel="stylesheet" href="style.css">
+ <script src="app.js" defer></script>
+ <script src="seller.js" defer></script>
+</head>
+<body data-page="seller">
+ <header class="site-header">
+  <a class="brand" href="index.html">Vintage Rides</a>
+  <button class="menu-button" id="menu-button" type="button">Menu</button>
+  <nav id="main-nav">
+   <a href="index.html">Home</a>
+   <a href="cars.html">Collection</a>
+   <a href="compare.html">Compare</a>
+   <a href="about.html">About</a>
+   <a href="contact.html">Contact</a>
+   <a href="login.html">Login / Register</a>
+   <a href="cart.html">Cart</a>
+  </nav>
+ </header>
+ <main class="container">
+
+  <h1>Seller Dashboard</h1>
+  <p>Submit a classic car for consignment and manage your submitted listings.</p>
+  <section class="simple-panel">
+   <h2>Submit a vehicle</h2>
+   <form id="consignment-form" class="form-grid">
+    <label>Make<input name="make" required></label>
+    <label>Model<input name="model" required></label>
+    <label>Year<input name="year" type="number" min="1886" max="2026" required></label>
+    <label>Asking price<input name="price" type="number" min="1" required></label>
+    <label>Mileage<input name="mileage" type="number" min="0" required></label>
+    <label>Engine<input name="engine" required></label>
+    <label>Condition description<textarea name="condition" required minlength="20"></textarea></label>
+    <button class="button" type="submit">Submit for Review</button>
+   </form>
+   <p id="seller-message" class="message" role="status"></p>
+  </section>
+  <section class="simple-panel">
+   <h2>My listings</h2>
+   <div class="table-wrap"><table><thead><tr><th>Vehicle</th><th>Asking price</th><th>Status</th><th>Action</th></tr></thead><tbody id="seller-listings">
+    <tr><td>: 1965 Ford Mustang</td><td>80,000</td><td>Pending review</td><td><button class="text-button edit-listing">Edit</button> <button class="text-button withdraw-listing">Withdraw</button></td></tr>
+   </tbody></table></div>
+   <h3>Inspection feedback / follow-up</h3>
+   <form id="seller-response-form" class="form-grid">
+    <label>Response<textarea name="response" required minlength="10"></textarea></label>
+    <button class="button" type="submit">Send Response</button>
+   </form>
+   <p id="seller-response-message" class="message" role="status"></p>
+  </section>
+
+ </main>
+ <footer class="site-footer">Vintage Rides</footer>
+</body>
+</html>
