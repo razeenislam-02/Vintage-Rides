@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Shopping Cart | Vintage Rides</title>
+ <link rel="stylesheet" href="style.css">
+ <script src="app.js" defer></script>
+ 
+</head>
+<body data-page="cart">
+ <header class="site-header">
+  <a class="brand" href="index.html">Vintage Rides</a>
+  <button class="menu-button" id="menu-button" type="button">Menu</button>
+  <nav id="main-nav">
+   <a href="index.html">Home</a>
+   <a href="cars.html">Collection</a>
+   <a href="compare.html">Compare</a>
+   <a href="about.html">About</a>
+   <a href="contact.html">Contact</a>
+   <a href="login.html">Login / Register</a>
+   <a href="cart.html">Cart</a>
+  </nav>
+ </header>
+ <main class="container">
+
+  <h1>Shopping Cart</h1>
+  <p class="muted">Add available cars from the collection. This cart resets when the page is refreshed.</p>
+  <div id="cart-items"></div>
+  <div id="cart-summary" class="simple-panel"></div>
+  <button class="button" id="checkout-button" type="button">Continue to Checkout</button>
+  <section id="checkout-section" hidden>
+   <h2>Checkout details</h2>
+   <form id="checkout-form" class="form-grid">
+    <label>Full name<input name="name" required minlength="3"></label>
+    <label>Email<input name="email" type="email" required></label>
+    <label>Phone<input name="phone" type="tel" required pattern="[0-9+() -]{11,20}"></label>
+    <label>Delivery address<textarea name="address" required minlength="10"></textarea></label>
+    <button class="button" type="submit">Place Order</button>
+   </form>
+  </section>
+  <p id="cart-message" class="message" role="status"></p>
+
+ </main>
+ <footer class="site-footer">Vintage Rides</footer>
+</body>
+</html>
