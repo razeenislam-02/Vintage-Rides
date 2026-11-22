@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Buyer Dashboard | Vintage Rides</title>
+ <link rel="stylesheet" href="style.css">
+ <script src="app.js" defer></script>
+ <script src="buyer.js" defer></script>
+</head>
+<body data-page="buyer">
+ <header class="site-header">
+  <a class="brand" href="index.html">Vintage Rides</a>
+  <button class="menu-button" id="menu-button" type="button">Menu</button>
+  <nav id="main-nav">
+   <a href="index.html">Home</a>
+   <a href="cars.html">Collection</a>
+   <a href="compare.html">Compare</a>
+   <a href="about.html">About</a>
+   <a href="contact.html">Contact</a>
+   <a href="login.html">Login / Register</a>
+   <a href="cart.html">Cart</a>
+  </nav>
+ </header>
+ <main class="container">
+
+  <h1>Buyer Dashboard</h1>
+  <p>Manage saved searches, comparisons, cart and orders.</p>
+  <div class="dashboard-grid">
+   <section class="simple-panel">
+    <h2>Save a search</h2>
+    <form id="saved-search-form" class="form-grid">
+     <label>Make<input name="make" required></label>
+     <label>Model<input name="model"></label>
+     <label>Maximum price<input name="price" type="number" min="1" required></label>
+     <label>Year from<input name="year" type="number" min="1900" max="2026"></label>
+     <label>Condition<select name="condition"><option>Any</option><option>Available</option></select></label>
+     <button class="button" type="submit">Save Search</button>
+    </form>
+    <ul id="saved-search-list"></ul>
+    
+   </section>
+   <section class="simple-panel">
+    <h2>My orders</h2>
+    <div class="table-wrap"><table><thead><tr><th>Order</th><th>Date</th><th>Car</th><th>Status</th><th>Action</th></tr></thead><tbody id="buyer-orders">
+     <tr><td>VR-1001</td><td></td><td>Ford Mustang</td><td>Pending</td><td><button class="text-button cancel-order">Cancel</button></td></tr>
+    </tbody></table></div>
+   </section>
+  </div>
+  <section class="simple-panel">
+   <h2>Quick links</h2>
+   <p><a href="cars.html">Browse cars</a> · <a href="compare.html">Compare cars</a> · <a href="cart.html">Shopping cart</a> · <a href="profile.html">Manage profile</a></p>
+  </section>
+
+ </main>
+ <footer class="site-footer">Vintage Rides</footer>
+</body>
+</html>

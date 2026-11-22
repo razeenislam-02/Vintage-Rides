@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Collection | Vintage Rides</title>
+ <link rel="stylesheet" href="style.css">
+ <script src="app.js" defer></script>
+ 
+</head>
+<body data-page="cars">
+ <header class="site-header">
+  <a class="brand" href="index.html">Vintage Rides</a>
+  <button class="menu-button" id="menu-button" type="button">Menu</button>
+  <nav id="main-nav">
+   <a href="index.html">Home</a>
+   <a href="cars.html">Collection</a>
+   <a href="compare.html">Compare</a>
+   <a href="about.html">About</a>
+   <a href="contact.html">Contact</a>
+   <a href="login.html">Login / Register</a>
+   <a href="cart.html">Cart</a>
+  </nav>
+ </header>
+ <main class="container">
+
+  <h1>Car Collection</h1>
+  <form id="search-form" class="filter-row">
+   <label>Search make or model<input id="search" type="search" placeholder="Ford Mustang"></label>
+   <label>Maximum price
+    <select id="max-price">
+     <option value="">Any price</option><option value="50000">50,000</option>
+     <option value="100000">100,000</option><option value="500000">500,000</option>
+     <option value="1000000">1,000,000</option>
+    </select>
+   </label>
+   <label>Year from<input id="year-from" type="number" min="1900" max="2026" placeholder="1950"></label>
+   <label>Condition / status
+    <select id="status"><option value="">All</option><option>Available</option><option>Sold</option></select>
+   </label>
+   <button class="button" type="submit">Search</button>
+   <button class="button secondary" type="reset" id="reset-search">Reset</button>
+  </form>
+  <p id="search-count" class="muted"></p>
+  <div class="car-grid" id="car-list"></div>
+
+ </main>
+ <footer class="site-footer">Vintage Rides</footer>
+</body>
+</html>
