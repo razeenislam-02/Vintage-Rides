@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Admin Dashboard | Vintage Rides</title>
+ <link rel="stylesheet" href="style.css">
+ <script src="app.js" defer></script>
+ <script src="admin.js" defer></script>
+</head>
+<body data-page="admin">
+ <header class="site-header">
+  <a class="brand" href="index.html">Vintage Rides</a>
+  <button class="menu-button" id="menu-button" type="button">Menu</button>
+  <nav id="main-nav">
+   <a href="index.html">Home</a>
+   <a href="cars.html">Collection</a>
+   <a href="compare.html">Compare</a>
+   <a href="about.html">About</a>
+   <a href="contact.html">Contact</a>
+   <a href="login.html">Login / Register</a>
+   <a href="cart.html">Cart</a>
+  </nav>
+ </header>
+ <main class="container">
+
+  <h1>Admin Dashboard</h1>
+  <p>Manage vehicles, users, orders, consignments and platform settings.</p>
+  <nav class="section-nav">
+   <a href="#inventory">Inventory</a><a href="#users">Users</a><a href="#orders">Orders</a><a href="#consignments">Consignments</a><a href="#settings">Settings</a>
+  </nav>
+  <section id="inventory" class="simple-panel">
+   <h2>Vehicle inventory</h2>
+   <form id="admin-car-form" class="form-grid">
+    <input type="hidden" name="id">
+    <label>Make<input name="make" required></label><label>Model<input name="model" required></label>
+    <label>Year<input name="year" type="number" min="1886" max="2026" required></label>
+    <label>Price<input name="price" type="number" min="1" required></label>
+    <label>Mileage<input name="mileage" type="number" min="0" required></label>
+    <label>Engine<input name="engine" required></label>
+    <label>Description<textarea name="description" required minlength="10"></textarea></label>
+    <label>Status<select name="status"><option>Available</option><option>Sold</option><option>Pending</option></select></label>
+    <button class="button" type="submit">Save Vehicle</button>
+    <button class="button secondary" type="reset">Clear</button>
+   </form>
+   <p id="admin-car-message" class="message" role="status"></p>
+   <div class="table-wrap"><table><thead><tr><th>Vehicle</th><th>Year</th><th>Price</th><th>Status</th><th>Actions</th></tr></thead><tbody id="admin-cars"></tbody></table></div>
+  </section>
+  <section id="users" class="simple-panel">
+   <h2>User accounts and roles</h2>
+   <form id="admin-user-form" class="form-grid">
+    <label>Name<input name="name" required minlength="3"></label><label>Email<input name="email" type="email" required></label>
+    <label>Role<select name="role" required><option>Buyer</option><option>Seller</option><option>Inspector</option><option>Admin</option></select></label>
+    <button class="button" type="submit">Add User</button>
+   </form>
+   <p id="admin-user-message" class="message" role="status"></p>
+   <div class="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Action</th></tr></thead><tbody id="admin-users">
+    <tr><td> Buyer</td><td>buyer@example.com</td><td>Buyer</td><td><button class="text-button remove-user">Suspend / Remove</button></td></tr>
+    <tr><td> Seller</td><td>seller@example.com</td><td>Seller</td><td><button class="text-button remove-user">Suspend / Remove</button></td></tr>
+   </tbody></table></div>
+  </section>
+  <section id="orders" class="simple-panel">
+   <h2>Orders and payment status</h2>
+   <div class="table-wrap"><table><thead><tr><th>Order ID</th><th>Buyer</th><th>Total</th><th>Payment</th><th>Fulfilment</th><th>Action</th></tr></thead><tbody id="admin-orders">
+    <tr><td>VR-1001</td><td> Buyer</td><td>65,000</td><td>Pending</td><td>Processing</td><td><button class="text-button update-order">Update status</button></td></tr>
+   </tbody></table></div>
+   <p class="muted">Payment is represented as a status. No real payment is processed.</p>
+  </section>
+  <section id="consignments" class="simple-panel">
+   <h2>Consignment requests</h2>
+   <div class="table-wrap"><table><thead><tr><th>Vehicle</th><th>Seller</th><th>Status</th><th>Action</th></tr></thead><tbody id="admin-consignments">
+    <tr><td>1965 Ford Mustang</td><td> Seller</td><td>Pending</td><td><button class="text-button approve-consignment">Approve</button> <button class="text-button reject-consignment">Reject</button></td></tr>
+   </tbody></table></div>
+  </section>
+  <section id="settings" class="simple-panel">
+   <h2>Platform settings</h2>
+   <form id="settings-form" class="form-grid">
+    <label>Site name<input name="siteName" value="Vintage Rides" required></label>
+    <label>Admin email<input name="adminEmail" type="email" value="admin@vintagerides.example" required></label>
+    <button class="button" type="submit">Update Settings</button>
+   </form>
+   <p id="settings-message" class="message" role="status"></p>
+  </section>
+
+ </main>
+ <footer class="site-footer">Vintage Rides</footer>
+</body>
+</html>
